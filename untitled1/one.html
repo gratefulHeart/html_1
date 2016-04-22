@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.8/angular.min.js"></script>
+</head>
+
+<body>
+<div id="pageRoot" ng-controller="MainCtrl">
+    <div class="preview-wrap">
+        <div class="preview-new">
+            <div class="doc-container">
+                <div class="doc-container-head">
+                    <h1 class="doc-title">{{zkDocument.title}}</h1>
+                </div>
+                <div class="doc-container-body">
+                    <section class="section" ng-repeat="section in zkDocument.sections" id="{{section.id}}">
+                        <div  ng-switch="section.type">
+                            <div class="section-title" ng-switch-when="title@h1">
+                                <h1>
+                                    <span class="title-ico"></span>
+                                    <span class="title-con">{{section.cnOrder}}、{{section.content}}</span>
+                                    <span class="title-tail"></span>
+                                </h1>
+                            </div>
+                            <div class="section-title" ng-switch-when="title@h2">
+                                <h2>
+                                    <span class="title-ico"></span>
+                                    <span class="title-con">{{section.abOrder}}.{{section.content}}</span>
+                                    <span class="title-tail"></span>
+                                </h2>
+                            </div>
+                            <div class="section-description" ng-switch-when="description">
+                                <div class="content" ng-bind-html="section.content"></div>
+                            </div>
+                            <div ng-switch-when="question@compound">
+                                <div class=" section-questions questionCompound">
+                                    <span class="title-index" ng-show="section.order">{{section.order}}</span>
+                                    <div class="questions-description" ng-bind-html="section.content"></div>
+                                    <div class="section-questions" ng-repeat="question in section.questions" ng-click="view=view?0:1" ng-init="view=0">
+                                        <span class="title-index" ng-show="section.questions.length > 1">{{$index+1}}</span>
+                                        <div class="content" ng-bind-html="question.content"></div>
+                                        <div class="questionsAnswerContainer table" ng-show="view" >
+                                            <div class="row" ng-show="question.answer"><div class="cell th">答案</div><div class="cell" ng-bind-html="question.answer"></div></div>
+                                            <div class="row" ng-show="question.explanation"><div class="cell th">解析</div><div class="cell" ng-bind-html="question.explanation"></div></div>
+                                            <div class="row" ng-show="question.note"><div class="cell th">备注</div><div class="cell" ng-bind-html="question.note"></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div ng-switch-when="question@single">
+                                <div class="section-questions" ng-repeat="question in section.questions" ng-click="view=view?0:1" ng-init="view=0">
+                                    <span class="title-index" ng-show="section.order">{{section.order}}</span>
+                                    <div class="content" ng-bind-html="question.content"></div>
+                                    <div class="questionsAnswerContainer table" ng-show="view" >
+                                        <div class="row" ng-show="question.answer"><div class="cell th">答案</div><div class="cell" ng-bind-html="question.answer"></div></div>
+                                        <div class="row" ng-show="question.explanation"><div class="cell th">解析</div><div class="cell" ng-bind-html="question.explanation"></div></div>
+                                        <div class="row" ng-show="question.note"><div class="cell th">备注</div><div class="cell" ng-bind-html="question.note"></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="doc-container-foot"></div>
+            </div>
+        </div>
+        <div class="doc-menu" style="display:none;">
+            <div class="doc-menu-head"></div>
+            <div class="doc-menu-body" custom-mousewheel style="position:relative;overflow:hidden;">
+                <ul>
+                    <li  title="{{item.body.content}}"   ng-click="anchorTo(item.body,$event)" ng-repeat="item in MenuTree" ng-show="!item.isTmp">
+                        <h3 id="menu_{{item.id}}" >{{item.cnOrder}}、{{item.body.content}}</h3>
+                        <ol>
+                            <li id="menu_{{subItem.id}}"   title="{{subItem.body.content}}"    ng-click="anchorTo(subItem.body,$event)" ng-repeat="subItem in item.children"  ng-show="!subItem.isTmp">{{subItem.body.abOrder}}. {{subItem.body.content}}</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <div class="doc-menu-foot"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    //模块入口
+    var app = angular.module('demo', [])
+            .controller('MainCtrl', function($scope) {});
+
+    //启动方法，data，content为json数据
+    var  bootstrap = function(data,content) {
+        try{
+            data = JSON.parse(data);
+            data.data.content = content
+            angular.bootstrap(document, ['demo']);
+            var scope = angular.element(document.getElementById("pageRoot")).scope();
+            scope.data = data;
+            scope.$apply();
+        }catch(err){}
+    }
+
+</script>
+
+
+</body>
+
+</html>

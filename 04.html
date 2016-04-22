@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    <p>每个表格由Table标签开始</p>
+    <p>每个表格行由 tr 标签开始。</p>
+    <p>每个表格数据由 td 标签开始。</p>
+
+    <p><b>注释：</b>frame 属性无法在 Internet Explorer 中正确地显示。</p>
+    <p>Table with frame="box":</p>
+    <table frame="box">
+        <tr>
+            <th>Month</th>
+            <th>Month</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+        </tr>
+    </table>
+    <p>Table with frame="above":</p>
+    <table frame="above">
+        <tr>
+            <th>Month</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+        </tr>
+    </table>
+    <p>Table with frame="below"</p>
+    <table frame="below">
+        <tr>
+            <td>ddd</td>
+            <td>ddd</td>
+        </tr>
+        <tr>
+            <td>ddd</td>
+            <td>ddd</td>
+        </tr>
+    </table>
+
+
+    <table width="400" border="1">
+        <tr>
+            <th align="left">消费项目。。。</th>
+            <th align="right">一月</th>
+            <th align="right">二月</th>
+        </tr>
+        <tr>
+            <th align="left">衣服</th>
+            <th align="right">一月</th>
+            <th align="right">二月</th>
+        </tr>
+    </table>
+
+
+    <h4>表头：</h4>
+    <table border="1">
+        <tr>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>电话</td>
+        </tr>
+        <tr>
+            <td>200</td>
+            <td>210</td>
+            <td>220</td>
+        </tr>
+
+    </table>
+
+    <h4>垂直的表头</h4>
+
+    <table border="1">
+        <caption>我的标题</caption>
+
+        <tr>
+            <td>姓名</td>
+            <td>Bill Gates</td>
+            <td>Bill Gates</td>
+            <td>Bill Gates</td>
+            <td>Bill Gates</td>
+
+        </tr>
+        <tr>
+            <td>性别</td>
+            <td>Bill Gates</td>
+            <td>Bill Gates</td>
+            <td>Bill Gates</td>
+            <td>Bill Gates</td>
+        </tr>
+        <tr>
+            <td>电话</td>
+            <td>Bill Gates</td>
+            <td>Bill Gates</td>
+            <td>Bill Gates</td>
+            <td>Bill Gates</td>
+        </tr>
+    </table>
+
+    <table border="1">
+        <tr>
+            <th>姓名</th>
+            <th colspan="2">电话</th>
+        </tr>
+        <tr>
+            <td>Bill Gates</td>
+            <td>123 Gates</td>
+            <td>456 Gates</td>
+        </tr>
+    </table>
+
+    <table border="1">
+        <tr>
+            <th>姓名</th>
+            <th>Bill Gates</th>
+        </tr>
+        <tr>
+            <th rowspan="2">电话</th>
+            <th>Bill Gates</th>
+        </tr>
+        <tr>
+            <th>Bill Gates</th>
+        </tr>
+
+    </table>
+
+    <table border="1">
+        <tr>
+            <td>
+                <p>这是一个段落。</p>
+                <p>这是另一个段落。</p>
+            </td>
+            <td>
+                这个单元包含一个表格：
+                <table border="1">
+                    <tr>
+                        <td>A</td>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>D</td>
+                    </tr>
+                </table>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                这个单元包含一个列表：
+                <ul>
+                    <li>苹果</li>
+                    <li>香蕉</li>
+                    <li>菠萝</li>
+                </ul>
+            </td>
+            <td>HELLO</td>
+        </tr>
+    </table>
+
+    <h4>没有</h4>
+    <table border="1" background="https://ss2.bdstatic.com/lfoZeXSm1A5BphGlnYG/skin/421.jpg?2">
+        <tr>
+            <td bgcolor="red">Frist</td>
+            <td bgcolor="green">Second</td>
+        </tr>
+        <tr>
+            <td bgcolor="orange">Third</td>
+            <td bgcolor="aqua">Fourth</td>
+        </tr>
+    </table>
+
+    <!--<p>请点击图像上的星球，把他们放大</p>-->
+    <!--<img src="eg_planets.jpg" border="0" usemap="#planetmap" alt="Planets"/>-->
+    <!--<map name="planetmap"  id="planetmap">-->
+        <!--<area shape="circle" coords="180,139,14" href="index.html" target="_blank" alt="Venus">-->
+        <!--<area shape="circle" coords="129,161,10" href="index.html" target="_blank" alt="Mercury">-->
+        <!--<area shape="rect" coords="0,0,110,260" href="index.html" target="_blank" alt="Sun">-->
+
+    <!--</map>-->
+    <!--<p><b>注释：</b>img 元素中的 "usemap" 属性引用 map 元素中的 "id" 或 "name" 属性（根据浏览器），所以我们同时向 map 元素添加了 "id" 和 "name" 属性。</p>-->
+</body>
+</html>

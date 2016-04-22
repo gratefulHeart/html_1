@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+<body ng-app="ipadTikuApp"> <!-- Add your site or application content here --> <div class="container no-mathjax" id="pageRoot" ng-controller="CommunicateCtrl"> <div ng-view=""></div> </div>
+    <div id="pageRoot" ng-controller="MainCtrl">
+        data{{data.data}}
+    </div>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.8/angular.min.js"></script>
+    <script>
+    window.onload = function() {
+        window.IPAD_Interface = {
+            bootstrap: function(data) {
+                angular.bootstrap(document, ['demo']);
+                var scope = angular.element(document.getElementById("pageRoot")).scope();
+                
+		setTimeout(function(){
+scope.data = JSON.parse(data);
+scope.$apply();
+},1000)
+            }
+        };
+    }
+    </script>
+    <script>
+    var app = angular.module('demo', [])
+        .controller('MainCtrl', function($scope) {});
+    </script>
+    <script>
+    // setTimeout(function() {
+    //     window.IPAD_Interface.bootstrap('{"greeting":"hello"}');
+    // }, 3000)
+    </script>
+</body>
+
+</html>

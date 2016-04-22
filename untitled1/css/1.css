@@ -1,0 +1,62 @@
+.a p{
+    background: red;
+    font-weight: bold;
+}
+#b span{
+    background-color: blue;
+}
+[title = "ws"] {
+    background-color: aqua;
+}
+[name|=ccc]{
+    color: blue;
+}
+h2,h3,h4{
+    font-size: 100px;
+}
+h1 p{
+    background-color: orange;
+}
+h1  strong{
+    background-color: crimson;
+}
+[test="wb"]{
+    background-color: #99bbbb;
+    padding: 150px;
+    font-size: large;
+    font-weight: bold;
+}
+p.no2 {
+    background-color: gray;
+    /*text-indent: 50em;*/
+    /*text-align: left;*/
+    word-spacing: 140px;
+    text-decoration:underline;
+    font-family: sans-serif;
+    font-style: italic;
+    font-style: oblique;
+    font-weight: bolder;
+
+
+}
+body{
+    background-image: url("../image/xxx.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+a:link {
+    color:#ff0000;
+}
+a:visited{
+    color: #ffff99;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active{
+    text-decoration: underline;
+}
+ul li{
+    list-style-image: url("../image/xxx.jpg");
+    font-weight: bold;
+}

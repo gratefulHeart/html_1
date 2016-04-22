@@ -1,0 +1,59 @@
+
+body{
+    background-color: #F2F2F2;
+}
+
+#content{
+    /*background-color: #ff0000;*/
+    text-align: center;
+}
+#content .first{
+    background-color: #ffffff;
+    display: inline-block;
+    border-radius: 5px;
+    margin-top: 30px;
+    width: 300px;
+    border: 2px solid #dddddd;
+
+}
+#content .first #group{
+    margin: 10px;
+    font-size: 20px;
+
+}
+#content .first #group label{
+    display: block;
+    text-align: left;
+}
+#content .first #group input{
+    width: 270px;
+    height: 30px;
+    font-size: 18px;
+}
+
+#content .first #login button{
+
+    background-color: #CC865E;
+
+}
+
+button{
+    width: 280px;
+    height: 40px;
+    font-size: 17px;
+    border: none;
+    margin-bottom: 10px;
+
+
+    cursor: pointer;
+}
+#content .bottom button{
+
+    background-color: #466BAF;
+    margin-top: 10px;
+
+}
+#content .bottom button:hover {
+    background-color: #ff0000;
+
+}

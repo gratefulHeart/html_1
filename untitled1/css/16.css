@@ -1,0 +1,54 @@
+/*body{*/
+    /*text-align: center;*/
+/*}*/
+#content{
+    background-color: #ff0000;
+    width: 200px;
+    height: 250px;
+    text-align: center;
+    margin: 0px auto;
+    /*position: relative;*/
+    border: 2px  solid purple;
+    border-radius: 5px;
+}
+
+#content .group  label{
+    color: green;
+    display: block;
+    font-size: 18px;
+    text-align: left;
+    margin-left: 20px;
+    /*margin-top: 20px;*/
+    /*left: 20px;*/
+    /*top:20px;*/
+    /*position: absolute;*/
+    padding: 10px 0px 5px;
+}
+#content .group  input{
+    margin:  5px;
+    border: 2px solid #ffff00;
+    width: 160px;
+    height: 30px;
+    font-size: 17px;
+}
+
+#content .login button{
+    width: 160px;
+    height: 30px;
+    background-color: gray;
+    color:  #ffffff;
+    margin-top: 20px;
+}
+
+#reg {
+    text-align: center;
+    margin-top: 50px;
+    width: 250px;
+    /*background-color: #ff0000;*/
+    margin:30px auto;
+}
+#reg button{
+    width: 200px;
+    height: 30px;
+    background-color: #b92c28;
+}

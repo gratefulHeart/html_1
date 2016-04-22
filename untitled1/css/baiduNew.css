@@ -1,0 +1,103 @@
+
+body{
+    background: url("https://ss2.bdstatic.com/lfoZeXSm1A5BphGlnYG/skin/421.jpg?2");
+    background-size: cover;
+}
+#header{
+    text-align: right;
+    height: 24px;
+}
+#header a{
+    color: #333;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left:20px ;
+    line-height: 24px;
+    font-family: "arial";
+
+}
+#header a.no-weight{
+    font-weight: normal;
+}
+#header a.more-product{
+    background-color:#3385ff ;
+    color: #ffffff;
+    text-align: center;
+    width: 60px;
+    height: 23px;
+    display: inline-block;
+    text-decoration: none;
+    /*line-height: 23px;*/
+}
+
+#content{
+    /*background-color: #ff0000;*/
+    text-align: center;
+    margin-top: 30px;
+
+}
+#content img{
+    width: 270px;
+    height: 129px;
+    text-align: center;
+    /*left: 50%;*/
+}
+#content input{
+    width: 500px;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #dddddd;
+    outline: none;
+    /*font-size: 18px;*/
+}
+
+#content  a{
+    width: 100px;
+    height: 30px;
+    /*padding: 10px;*/
+    /*margin: -5px;*/
+    background-color: #3385ff;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 30px;
+    color: #ffffff;
+    margin-left: -5px;
+    padding: 6px;
+    display:inline-block;
+
+
+}
+#footer{
+    /*background-color:red;*/
+    text-align: center;
+    font-size: 12px;
+
+}
+#footer .footer-header{
+    margin-top: 600px;
+}
+#footer .footer-header a{
+    color: #00c;
+    margin: 0px 5px;
+}
+#footer .footer-bottom{
+    color: #666;
+}
+#footer .footer-bottom a{
+    color: #666;
+}
+/*#content a{*/
+    /*background-color: #3385ff;*/
+    /*border: 1px solid #2d78f4;*/
+    /*color: white;*/
+    /*text-decoration: none;*/
+    /*display: inline-block;*/
+    /*width: 100px;*/
+    /*height: 32px;*/
+    /*text-align: center;*/
+    /*line-height: 32px;*/
+    /*margin-left: -5px;*/
+    /*border: 1px solid #2d78f4;*/
+    /*padding: 4px;*/
+
+/*}*/
