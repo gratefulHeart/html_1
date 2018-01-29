@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        var localfile = "/etc/hosts"
+
+        var xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange=function()
+
+        {
+
+            if (xhr.readyState==4)
+
+            {
+
+                alert(xhr.responseText);
+
+            }
+
+        }
+
+
+        try {
+
+            xhr.open("GET", localfile, true);
+
+            xhr.send();
+
+        }
+
+        catch (ex) {
+
+            alert(ex.message);
+
+        }
+
+    </script>
+</head>
+
+<body>
+<p>测试一下马上出发 你好啊 终于见到你了哈哈哈哈哈带饭了多少积分；辣椒水；地方的升级了；发电机房；都是垃圾发；s</p>
+</body>
+</html>
