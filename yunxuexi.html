@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>云学习</title>
+		<script>
+			var docEl = document.documentElement.scrollWidth || document.documentElement.clientWidth || $(window).width() || window.screen.availWidth;
+			var metaEl = document.querySelector('meta[name="viewport"]');
+			var scale = docEl / 375;
+			metaEl.setAttribute('content', 'width=375,initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ',user-scalable=no');
+		</script>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+			}
+			.wechat-main {
+	      		width: 100%;
+	      		height: 100%;
+	      		background: rgba(0,0,0,.5);
+	      		text-align: center;
+			}
+			.font-icon{
+				width: 278px;
+				height: 139px;
+				margin-top: 16px;
+			}
+			.review-icon{
+				margin-top: 50px;
+				width: 177px;
+				height: 232px;
+			}
+			
+			.main {
+				width: 100%;
+				height: 100%;
+				background: url(img/bg.png) no-repeat center;
+				background-size: 100% 100%;
+				text-align: center;
+			}
+			
+			.ips-icon {
+				width: 107px;
+				height: 107px;
+				margin: 96px 0 11px 0;
+			}
+			
+			.xes-title {
+				font-family: PingFangSC-Semibold;
+				font-size: 19.2px;
+				color: #FFFFFF;
+				letter-spacing: 0.64px;
+				text-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+			}
+			
+			.btn {
+				width: 227px;
+				height: 53px;
+				margin-top: 155px;
+				background-image: linear-gradient(0deg, #00B650 9%, #00C657 95%);
+				border-radius: 6px;
+				font-size: 18px;
+				color: #FFFFFF;
+				letter-spacing: 0.6px;
+				outline: none;
+				border: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wechat-main">
+			<img class="font-icon" src="img/font.png" />
+			<img class="review-icon" src="img/rewiew.png" />
+		</div>
+		<div class="main" id="androidMain">
+			<img class="ips-icon" src="img/ips.png" />
+			<p class="xes-title">学而思云学习</p>
+			<a id="androidUrl" href="http://ipsres.speiyou.cn/stone-ips-web/json/stjson/hotupdate/Android/Android_CL_release_V1.2.3_201806261806.apk">
+				<button class="btn">点击下载</button>
+			</a>
+		</div>
+		<script>
+			goDownload();
+			$.ajax({
+                url: 'http://ips.api.speiyou.cn/stone-ips-rest/ipsUpdateVersionServerApp/queryNewVersion?plat=2',
+                type: 'GET',
+                dataType: "json",
+                headers: {
+                    'area': '010',
+                    'ics-token':'446a654cf768818ef76645fd8a09eacd'
+                },
+                success: function(res) {
+	                	if(res.data.url){
+	                		$('#androidUrl').attr('href',res.data.url);
+	                	}
+                },
+                error: function(err) {
+                		
+                }
+            })
+			// 去下载
+
+			function goDownload() {
+				var u = navigator.userAgent,
+					app = navigator.appVersion;
+				var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1;
+				var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+				var isIpad = u.indexOf('iPad') > -1;
+				var $ios = document.getElementById('showios');
+
+				// 这里是iOS浏览器
+				if(isIOS) {
+					if (isIpad) {
+						console.log('this is ios && iPad');
+						$('#androidMain').hide();
+						window.location.href = 'https://itunes.apple.com/cn/app/%E5%AD%A6%E8%80%8C%E6%80%9D%E4%BA%91%E5%AD%A6%E4%B9%A0hd/id1115550474?mt=8'
+						
+					} else {
+						console.log('this is ios && iphone');
+						$('#androidMain').hide();
+						window.location.href = 'https://itunes.apple.com/cn/app/%E5%AD%A6%E8%80%8C%E6%80%9D%E4%BA%91%E5%AD%A6%E4%B9%A0/id1327715695?mt=8'
+					}
+				} else {
+					// 是微信内部webView
+					if(is_weixn()) {
+						$('.main').hide();
+						$('.wechat-main').show();
+					} else {
+						$('.wechat-main').hide();
+						$('.main').show();
+					}
+				}
+			}
+
+			// 是微信浏览器
+			function is_weixn() {
+				var ua = navigator.userAgent.toLowerCase();
+				if(ua.match(/MicroMessenger/i) == "micromessenger") {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		</script>
+	</body>
+</html>
